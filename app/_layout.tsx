@@ -1,14 +1,5 @@
-import FontAwesome from "@expo/vector-icons/FontAwesome";
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider,
-} from "@react-navigation/native";
-import { useFonts } from "expo-font";
-import { SplashScreen, Stack } from "expo-router";
-import { useEffect } from "react";
-import { useColorScheme } from "react-native";
-
+import CustomHeader from "@/components/CustomHeader";
+import { Stack } from "expo-router";
 export const unstable_settings = {
   // Ensure that reloading on `/modal` keeps a back button present.
   initialRouteName: "index",
@@ -17,7 +8,13 @@ export const unstable_settings = {
 export default function RootLayoutNav() {
   return (
     <Stack>
-      <Stack.Screen name="index" options={{}} />
+      <Stack.Screen
+        name="index"
+        options={{
+          headerShadowVisible: false,
+          headerTitle: () => <CustomHeader />,
+        }}
+      />
     </Stack>
   );
 }
