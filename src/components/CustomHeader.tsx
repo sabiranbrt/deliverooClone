@@ -1,5 +1,4 @@
 import deliverylogo from "@/assets/images/fooddeliverylogo.png";
-import Colors from "@/constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
 import { Link } from "expo-router";
 import { useRef } from "react";
@@ -14,6 +13,7 @@ import {
 import { ActionSheetRef } from "react-native-actions-sheet";
 import { SafeAreaView } from "react-native-safe-area-context";
 import LocationBottomSheet from "./LocationBottomSheet";
+import Colors from "@/constants/Colors";
 
 const SearchBar = () => (
   <View style={styles.SearchBar}>
@@ -35,7 +35,7 @@ const SearchBar = () => (
         </View>
       </View>
       <View>
-        <Link href={"/"}>
+        <Link href={"/(modal)/filter"} asChild>
           <TouchableOpacity>
             <Ionicons name="options-outline" size={20} color={Colors.primary} />
           </TouchableOpacity>
